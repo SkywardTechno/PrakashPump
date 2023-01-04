@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="320dp"
+    android:layout_height="400dp"
+    android:background="@color/white"
+    android:weightSum="10">
+
+    <TextView
+        android:id="@+id/txt_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/txt_x_large"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:textColor="@color/black"/>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorPrimary"
+        android:layout_margin="5dp"/>
+    <WebView
+        android:id="@+id/noti_details"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="15dp"
+        android:layout_weight="8.6"
+        android:textSize="@dimen/txt_large"
+        android:gravity="left"
+        android:padding="5dp"
+        android:scrollbars="vertical"
+        android:scrollIndicators="right"
+        android:scrollbarAlwaysDrawVerticalTrack="true"
+        android:verticalScrollbarPosition="right"
+        android:textColor="@color/black"
+        />
+
+    <!-- <TextView
+         android:id="@+id/btn_ok"
+
+         android:layout_width="wrap_content"
+         android:gravity="center"
+         android:layout_height="0dp"
+         android:layout_weight="1"
+         android:layout_gravity="center"
+         android:text="@string/ok"
+         android:textSize="@dimen/txt_large"
+         android:textStyle="bold"
+         android:textColor="@drawable/textselector"
+         android:textAllCaps="false"
+         />-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:weightSum="5.2"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"/>
+
+        <TextView
+            android:id="@+id/btn_ok"
+            android:background="@color/white"
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:layout_height="match_parent"
+            android:layout_weight="2.4"
+            android:text="OK"
+            android:textSize="14dp"
+            android:textStyle="bold"
+            android:textColor="@drawable/textselector_blue"
+            android:textAllCaps="false"
+            />
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"/>
+
+        <TextView
+            android:id="@+id/btn_goto"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2.4"
+            android:text="GoTo"
+            android:textColor="@drawable/textselector_blue"
+            android:background="@color/white"
+            android:textAllCaps="false"
+            android:textSize="14dp"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"/>
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.4"/>
+</LinearLayout>

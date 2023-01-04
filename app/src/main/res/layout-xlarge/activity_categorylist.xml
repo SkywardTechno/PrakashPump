@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@color/white"
+    tools:context="skyward.pp.CategorylistActivity">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    <LinearLayout
+        android:layout_below="@+id/toolbar"
+        android:id="@+id/ll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="10">
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:id="@+id/txtcategorytype"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:drawableRight="@drawable/dropdown"
+            android:textColor="@color/Blue"
+            android:textSize="24dp"
+            android:hint="Select Category Type"
+            android:gravity="center"
+            android:paddingRight="10dp"
+            android:background="@drawable/grey_transperantbtn"/>
+
+
+        <LinearLayout
+            android:layout_below="@+id/llsearch"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="9"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
+            <ListView
+
+                android:id="@+id/listCategory"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:divider="@color/grey"
+                android:background="#ffffff"
+                android:dividerHeight="1dp"
+                />
+        </LinearLayout>
+    </LinearLayout>
+    <ImageButton
+        android:id="@+id/add_category"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:background="@mipmap/ic_add"
+        android:layout_margin="80dp"/>
+</RelativeLayout>

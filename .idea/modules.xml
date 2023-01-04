@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/PrakashPump-master.iml" filepath="$PROJECT_DIR$/.idea/modules/PrakashPump-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/PrakashPump-master.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/PrakashPump-master.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/PrakashPump-master.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/PrakashPump-master.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/PrakashPump-master.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/PrakashPump-master.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/PrakashPump-master.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/PrakashPump-master.app.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/library-1.1.5/PrakashPump-master.library-1.1.5.iml" filepath="$PROJECT_DIR$/.idea/modules/library-1.1.5/PrakashPump-master.library-1.1.5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sinch-android-rtc-3.11.0/PrakashPump-master.sinch-android-rtc-3.11.0.iml" filepath="$PROJECT_DIR$/.idea/modules/sinch-android-rtc-3.11.0/PrakashPump-master.sinch-android-rtc-3.11.0.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/zxing-android-embedded-3.2.0/PrakashPump-master.zxing-android-embedded-3.2.0.iml" filepath="$PROJECT_DIR$/.idea/modules/zxing-android-embedded-3.2.0/PrakashPump-master.zxing-android-embedded-3.2.0.iml" />
+    </modules>
+  </component>
+</project>

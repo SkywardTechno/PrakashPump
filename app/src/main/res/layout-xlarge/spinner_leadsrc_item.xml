@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheckedTextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/txtlsitem"
+    android:singleLine="true"
+    android:layout_width="match_parent"
+    android:paddingLeft="15dp"
+    android:layout_height="60dp"
+    android:textSize="26dp"
+    android:layout_margin="10dp"
+    android:text="snbgsdhdfnbkj"
+    android:gravity="center_vertical"
+    android:textColor="#000000"/>
+

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:background="@drawable/layerlist"
+    android:descendantFocusability="blocksDescendants"
+    android:elevation="20dp">
+
+    <ImageView
+        android:id="@+id/list_productimg"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:scaleType="fitCenter"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/light_grey"
+        android:orientation="horizontal"
+        android:descendantFocusability="blocksDescendants"
+        android:weightSum="5">
+
+        <TextView
+            android:id="@+id/list_productname"
+            android:layout_width="0dp"
+            android:layout_weight="4"
+            android:layout_height="match_parent"
+            android:textSize="14dp"
+            android:paddingLeft="10dp"
+            android:text=""
+            android:gravity="left|center_vertical"
+            android:textColor="@color/black"
+            android:background="@color/light_grey"/>
+
+        <ImageButton
+            android:id="@+id/list_upin"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:background="@color/light_grey"
+            android:layout_height="match_parent"
+            android:src="@drawable/upinblue"/>
+
+    </LinearLayout>
+
+</LinearLayout>

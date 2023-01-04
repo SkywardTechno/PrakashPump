@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="10"
+    android:descendantFocusability="beforeDescendants"
+    android:focusableInTouchMode="true"
+    tools:context="skyward.pp.CustomerOrderInquiryListActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    <LinearLayout
+        android:id="@+id/llfilter"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:focusable="true"
+        android:weightSum="1"
+        android:layout_marginTop="10dp"
+        android:focusableInTouchMode="true"
+        android:layout_gravity="fill"
+        android:orientation="horizontal"
+        >
+<!--
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.1"/>
+-->
+
+
+
+        <TextView
+            android:id="@+id/txtinquirytype"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:drawableRight="@drawable/dropdown"
+            android:textColor="@color/Blue"
+            android:textSize="14dp"
+            android:hint="Select Inquiry Type"
+            android:gravity="center"
+            android:paddingRight="10dp"
+            android:background="@drawable/grey_transperantbtn"/>
+<!--
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.1"/>
+-->
+
+    </LinearLayout>
+
+    <ListView
+
+        android:id="@+id/coi_listorderinquiry"
+        android:layout_height="0dp"
+        android:layout_weight="9"
+        android:layout_width="fill_parent"
+        android:divider="@color/light_grey"
+        android:background="#ffffff"
+        android:dividerHeight="1dp"
+        android:layout_marginTop="10dp" />
+
+</LinearLayout>

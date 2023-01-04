@@ -1,0 +1,2 @@
+configurations.create("default")
+artifacts.add("default", file('zxing-android-embedded-3.2.0.aar'))

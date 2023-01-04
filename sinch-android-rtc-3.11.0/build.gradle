@@ -1,0 +1,2 @@
+configurations.create("default")
+artifacts.add("default", file('sinch-android-rtc-3.11.0.aar'))

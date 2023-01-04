@@ -1,0 +1,24 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    >
+    <item android:id="@+id/action_noti"
+        android:title="Notifications"
+        android:icon="@drawable/notiwhite"
+        app:showAsAction="always"
+        android:actionLayout="@layout/action_bar_annnouncement_icon"
+        />
+    <item android:id="@+id/action_mycart"
+        android:title="My Cart"
+        android:icon="@drawable/cart_white"
+        app:showAsAction="ifRoom"
+        android:actionLayout="@layout/action_bar_notifitcation_icon" />
+
+
+
+    />
+
+    <!-- <item android:id="@+id/action_settings"
+         android:title="@string/action_settings"
+         app:showAsAction="never"/>-->
+</menu>

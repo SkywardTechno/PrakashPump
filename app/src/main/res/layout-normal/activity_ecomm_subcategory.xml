@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="10"
+    android:fitsSystemWindows="true"
+    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="skyward.pp.ecommerce.EcommSubCategoryActivity">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"/>
+
+    <TextView
+        android:id="@+id/sub_categoryname"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:hint="Category Name"
+        android:gravity="left|center_vertical"
+        android:layout_marginLeft="10dp"
+        android:textColorHint="@color/black"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="18dp"/>
+
+
+
+    <GridView
+        android:layout_below="@+id/toolbar"
+        android:id="@+id/grid_subcategory"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8.7"
+        android:layout_margin="5dp"
+        android:numColumns="2"
+        android:verticalSpacing="5dp"
+        android:horizontalSpacing="5dp"
+        android:gravity="center"
+        android:stretchMode="columnWidth"
+        android:columnWidth="160dp"
+        android:focusable="true"
+        android:clickable="true"
+
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.2"/>
+
+</LinearLayout>

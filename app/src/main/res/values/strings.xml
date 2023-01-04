@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">PrakashPump</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="title_activity_name_add">NameAddActivity</string>
+
+    <string-array name="nav_drawer_items">
+        <item>Home</item>
+        <item>Categories</item>
+        <item>Offers and Promotions</item>
+        <item>My Orders</item>
+        <item>My Wishlist</item>
+        <item>My Profile</item>
+        <item>Contact Us</item>
+        <item>Help Center</item>
+        <item>Terms and Conditions</item>
+        <item>Support and Service</item>
+        <item>Logout</item>
+
+    </string-array>
+
+    <array name="nav_drawer_icons">
+        <item>@drawable/home</item>
+        <item>@drawable/lisdrawercategoriest</item>
+        <item>@drawable/percent</item>
+        <item>@drawable/drawermyorders</item>
+        <item>@drawable/drawermywishlist</item>
+        <item>@drawable/drawermyprofile</item>
+        <item>@drawable/information</item>
+        <item>@drawable/information</item>
+        <item>@drawable/drawertermscondition</item>
+        <item>@drawable/drawerlogout</item>
+        <item>@drawable/drawerlogout</item>
+    </array>
+    <string name="tc"><u>Terms and Conditions</u></string>
+</resources>

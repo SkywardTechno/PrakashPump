@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".AdminDashboardActivity"
+    tools:showIn="@layout/activity_admin_dashboard_new">
+
+    <FrameLayout
+        android:id="@+id/homeframelayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="8.5">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1.5"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.55" />
+
+                <LinearLayout
+                    android:id="@+id/dash_ll_customer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/ll_selectionwhite"
+                    android:orientation="vertical"
+                    android:weightSum="5.5">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.5" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="3"
+                        android:gravity="center"
+                        android:src="@drawable/customer"
+                        android:tint="@color/colorPrimary" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="2"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:text="Customer"
+                        android:textAllCaps="false"
+                        android:textColor="@color/colorPrimary"
+                        android:textColorHint="@color/white"
+                        android:textSize="18dp" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.6" />
+
+                <!--
+                                <LinearLayout
+                                    android:id="@+id/dash_ll_productmaster"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/ll_selectionwhite"
+                                    android:orientation="vertical"
+                                    android:weightSum="5.5">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="0.5" />
+
+                                    <ImageView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="3"
+                                        android:gravity="center"
+                                        android:src="@drawable/productmaster"
+                                        android:tint="@color/colorPrimary" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="2"
+                                        android:gravity="center"
+                                        android:singleLine="true"
+                                        android:text="Product Master"
+                                        android:textAllCaps="false"
+                                        android:textColor="@color/colorPrimary"
+                                        android:textColorHint="@color/white"
+                                        android:textSize="18dp" />
+
+                                </LinearLayout>
+                -->
+                <LinearLayout
+                    android:id="@+id/dash_ll_addliterature"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/ll_selectionwhite"
+                    android:orientation="vertical"
+                    android:weightSum="5.5">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.5" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="3"
+                        android:gravity="center"
+                        android:src="@drawable/literature"
+                        android:tint="@color/colorPrimary" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="2"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:text="Add Literature"
+                        android:textAllCaps="false"
+                        android:textColor="@color/colorPrimary"
+                        android:textColorHint="@color/white"
+                        android:textSize="18dp" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.6" />
+
+
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1.5"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.55" />
+
+                <LinearLayout
+                    android:id="@+id/dash_ll_orderinquiry"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/ll_selectionwhite"
+                    android:orientation="vertical"
+                    android:weightSum="5.5">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.5" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="3"
+                        android:gravity="center"
+                        android:src="@drawable/orderinquiry"
+                        android:tint="@color/colorPrimary" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="2"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:text="Order Inquiry"
+                        android:textAllCaps="false"
+                        android:textColor="@color/colorPrimary"
+                        android:textColorHint="@color/white"
+                        android:textSize="18dp" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.6" />
+
+                <LinearLayout
+                    android:id="@+id/dash_ll_supportserviceinquiry"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/ll_selectionwhite"
+                    android:orientation="vertical"
+                    android:weightSum="5.5">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.5" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="3"
+                        android:gravity="center"
+                        android:src="@drawable/supportservice"
+                        android:tint="@color/colorPrimary" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="2"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:text="Support Service Inquiry"
+                        android:textAllCaps="false"
+                        android:textColor="@color/colorPrimary"
+                        android:textColorHint="@color/white"
+                        android:textSize="18dp" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.6" />
+
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1.5"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.55" />
+
+                <LinearLayout
+                    android:id="@+id/dash_ll_termscondition"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/ll_selectionwhite"
+                    android:orientation="vertical"
+                    android:weightSum="5.5">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.5" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="3"
+                        android:gravity="center"
+                        android:src="@drawable/termscondition"
+                        android:tint="@color/colorPrimary" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="2"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:text="Terms and Conditions"
+                        android:textAllCaps="false"
+                        android:textColor="@color/colorPrimary"
+                        android:textColorHint="@color/white"
+                        android:textSize="18dp" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.6" />
+
+                <LinearLayout
+                    android:id="@+id/dash_ll_categorydata"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/ll_selectionwhite"
+                    android:orientation="vertical"
+                    android:weightSum="5.5">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.5" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="3"
+                        android:alpha="0.8"
+                        android:gravity="center"
+                        android:src="@drawable/add_category" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="2"
+                        android:alpha="1"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:text="Category Data"
+                        android:textAllCaps="false"
+                        android:textColor="@color/colorPrimary"
+                        android:textColorHint="@color/white"
+                        android:textSize="18dp" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.6" />
+
+
+            </LinearLayout>
+
+            <!--
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1" />
+            -->
+
+
+            <!--
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1.5"
+                            android:orientation="horizontal"
+                            android:weightSum="2">
+
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0.55" />
+
+                            <LinearLayout
+                                android:id="@+id/dash_ll_addliterature"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:background="@drawable/ll_selectionwhite"
+                                android:orientation="vertical"
+                                android:weightSum="5.5">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="0.5" />
+
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="3"
+                                    android:gravity="center"
+                                    android:src="@drawable/literature"
+                                    android:tint="@color/colorPrimary" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_weight="2"
+                                    android:gravity="center"
+                                    android:singleLine="true"
+                                    android:text="Add Literature"
+                                    android:textAllCaps="false"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textColorHint="@color/white"
+                                    android:textSize="18dp" />
+
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0.6" />
+
+                            <LinearLayout
+                                android:id="@+id/dash_ll_myinquiry"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:background="@drawable/ll_selectionwhite"
+                                android:orientation="vertical"
+                                android:visibility="invisible"
+                                android:weightSum="5.5">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="0.5" />
+
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="3"
+                                    android:gravity="center"
+                                    android:src="@drawable/myinquiry"
+                                    android:tint="@color/colorPrimary" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="2"
+                                    android:gravity="center"
+                                    android:singleLine="true"
+                                    android:text="My Inquiry"
+                                    android:textAllCaps="false"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textColorHint="@color/white"
+                                    android:textSize="@dimen/txt_large" />
+
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0.6" />
+
+
+                        </LinearLayout>
+            -->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+    </FrameLayout>
+</androidx.drawerlayout.widget.DrawerLayout>
+

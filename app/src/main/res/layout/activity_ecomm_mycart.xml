@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="11.2"
+    android:background="@color/white"
+    tools:context="skyward.pp.ecommerce.Ecomm_MyCart">
+
+    <!--
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+    -->
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.2"
+        />
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8.8"
+        android:orientation="horizontal"
+        android:weightSum="10">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="9.6"
+            android:orientation="vertical"
+            android:weightSum="10"
+            android:background="@color/white">
+
+
+            <ListView
+                android:id="@+id/listmycart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:divider="@color/light_grey"
+                android:dividerHeight="2dp"
+                android:background="@color/white"
+                android:layout_margin="5dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.2"
+                />
+
+            <ImageView
+                android:id="@+id/img_placeholderline2"
+                android:layout_width="match_parent"
+                android:background="@color/grey"
+                android:layout_height="1dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                />
+
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/ll_total"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:layout_weight="0.8"
+        android:layout_margin="5dp"
+        android:background="@color/light_grey"
+        android:weightSum="10">
+        <TextView
+            android:gravity="center_vertical"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:text="Grand Total"
+            android:textSize="14dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:paddingLeft="5dp"/>
+
+        <TextView
+            android:gravity="right|center_vertical"
+            android:id="@+id/cart_grandtotal"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:hint=" - Rs.    "
+            android:textSize="14dp"
+            android:textColor="@color/black"
+            android:paddingRight="5dp"
+            />
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.2"/>
+    <TextView
+        android:id="@+id/cart_addservices"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.8"
+        android:text="Add Service ?"
+        android:textSize="14dp"
+        android:textStyle="bold"
+        android:textColor="@color/Blue"
+        android:padding="5dp"
+        android:visibility="gone"
+        android:layout_margin="5dp"/>
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:background="@color/grey"
+        android:id="@+id/img_placeholderline"
+        android:layout_height="1dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.2"
+        />
+
+    <Button
+        android:id="@+id/cart_btn_placeorder"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/blue_squarebtn_bg"
+        android:textSize="14dp"
+        android:textColor="@color/white"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="5dp"
+        android:text="Place my Order"/>
+
+
+</LinearLayout>

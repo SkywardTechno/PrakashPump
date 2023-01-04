@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical"
+android:weightSum="10.8"
+android:fitsSystemWindows="true"
+android:background="@color/white"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+tools:context="skyward.pp.ecommerce.EcommOffersCategoryActivity">
+
+
+<ImageView
+    android:id="@+id/Offersimage"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="3"
+    android:scaleType="fitXY"
+    />
+
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="0.1"/>
+
+<GridView
+    android:id="@+id/grid_offersproducts"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_margin="5dp"
+    android:layout_weight="7.7"
+    android:clickable="true"
+    android:columnWidth="160dp"
+    android:focusable="true"
+    android:gravity="center"
+    android:horizontalSpacing="5dp"
+    android:numColumns="2"
+    android:stretchMode="columnWidth"
+    android:verticalSpacing="5dp"
+
+    />
+
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="0.2"/>
+
+</LinearLayout>
