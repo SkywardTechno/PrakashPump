@@ -5,8 +5,6 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -14,6 +12,9 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import org.ksoap2.SoapEnvelope;
 import org.ksoap2.serialization.SoapObject;
@@ -201,7 +202,7 @@ public class LiteratureCategory extends AppCompatActivity {
                             SoapObject soapResult = null;
                             soapResult = (SoapObject) result4.getProperty(i);
 
-                            String name=soapResult.getPropertySafelyAsString("ProductTypeName", "")
+                            String name=soapResult.getPrimitivePropertySafelyAsString("ProductTypeName")
                                     .toString();
                             int id=Integer.parseInt(soapResult.getPropertySafelyAsString(
                                     "ID").toString());
@@ -218,7 +219,6 @@ public class LiteratureCategory extends AppCompatActivity {
 
                         }
 
-
                     } else {
                         Toast.makeText(getApplicationContext(),
                                 soapObject.getProperty("ErrorMessage").toString(),
@@ -229,7 +229,6 @@ public class LiteratureCategory extends AppCompatActivity {
                 } catch (NullPointerException e) {
                     e.printStackTrace();
                 }
-
             }else {
 
                 Toast.makeText(getApplicationContext(), "Check your Internet Connection", Toast.LENGTH_SHORT).show();

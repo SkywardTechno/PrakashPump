@@ -1,5 +1,6 @@
 package skyward.pp;
 
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
@@ -9,10 +10,8 @@ import android.database.sqlite.SQLiteException;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.AsyncTask;
-import android.os.Handler;
-import android.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.os.Handler;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -23,6 +22,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import org.ksoap2.SoapEnvelope;
 import org.ksoap2.serialization.SoapObject;
@@ -153,7 +154,7 @@ public class ForgotPasswordverificationActivity extends AppCompatActivity {
             }
         });
 
-        handler.postDelayed(run, 3000);
+       // handler.postDelayed(run, 3000);
 
         vcode.addTextChangedListener(new TextWatcher() {
             public void afterTextChanged(Editable s) {
@@ -218,12 +219,11 @@ public class ForgotPasswordverificationActivity extends AppCompatActivity {
                 }
             }
         });
-
-        t.start();
+       // t.start();
     }
 
 
-    Thread t = new Thread() {
+  /*  Thread t = new Thread() {
         @Override
         public void run() {
             try {
@@ -235,7 +235,6 @@ public class ForgotPasswordverificationActivity extends AppCompatActivity {
 // Toast.makeText(chatPage.this,"hello from chat page",Toast.LENGTH_LONG).show();
 // update TextView here!
                             getCode();
-
                         }
                     });
                 }
@@ -250,7 +249,7 @@ public class ForgotPasswordverificationActivity extends AppCompatActivity {
         public void run() {
             getCode();
         }
-    };
+    };*/
 
     public void getCode() {
         StringBuilder smsBuilder = new StringBuilder();
@@ -290,7 +289,7 @@ public class ForgotPasswordverificationActivity extends AppCompatActivity {
                         matcher.find();
                         Log.e("No....--", matcher.group());
                         if (matcher.group().equals("")) {
-                            handler.postDelayed(run, 7000);
+                           //handler.postDelayed(run, 7000);
                         } else {
                             vcode.setText(matcher.group());
                         }

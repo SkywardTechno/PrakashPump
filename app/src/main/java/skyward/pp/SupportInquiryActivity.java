@@ -6,8 +6,6 @@ import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -16,6 +14,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import org.ksoap2.SoapEnvelope;
 import org.ksoap2.serialization.SoapObject;
@@ -556,19 +557,13 @@ public class SupportInquiryActivity extends AppCompatActivity {
                     myAndroidHttpTransport.call(Utility.SOAP_ACTION
                             + Utility.INSERT_INQUIRY, mySoapEnvelop);
 
-                } catch (XmlPullParserException e) {
+                } catch (XmlPullParserException | SocketTimeoutException | SocketException e) {
                     // System.out.println(e.getClass());
                     e.printStackTrace();
                     // System.out.println("XmlPullParserException 0");
-                } catch (SocketTimeoutException e) {
-                    // System.out.println(e.getClass());
-                    e.printStackTrace();
-                    // System.out.println("SocketTimeoutException 1");
-                } catch (SocketException e) {
-                    // System.out.println(e.getClass());
-                    e.printStackTrace();
-                    // System.out.println("SocketException  2");
-                } catch (IOException e) {
+                } // System.out.println("SocketTimeoutException 1");
+                // System.out.println("SocketException  2");
+                catch (IOException e) {
                     // System.out.println(e.getClass());
                     e.printStackTrace();
                     System.out.println("IO Exception 3");

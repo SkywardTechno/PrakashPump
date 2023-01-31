@@ -5,19 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/layerlist"
-    android:weightSum="5">
-
-
+    android:weightSum="2">
 
     <LinearLayout
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="10dp"
+        android:padding="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:weightSum="10"
-        android:orientation="horizontal"
-        >
+        android:orientation="horizontal">
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -25,10 +20,9 @@
 
         <ImageView
             android:scaleType="fitCenter"
-
             android:id="@+id/offer_image_view"
             android:layout_width="0dp"
-            android:layout_height="100dp"
+            android:layout_height="60dp"
             android:layout_weight="2"
             android:padding="5dp"
             android:contentDescription="@string/app_name" />
@@ -48,17 +42,12 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/txt_cart_productname"
                 android:textColor="@android:color/black"
-                android:textSize="26dp"
+                android:textSize="18dp"
 
                 android:gravity="center_vertical"
                 android:layout_gravity="center_vertical"
                 android:paddingLeft="5dp"/>
-            <!--
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="0dp"
-                            android:layout_weight="0.1"/>
-            -->
+
             <TextView
                 android:layout_marginBottom="5dp"
                 android:layout_marginTop="5dp"
@@ -66,7 +55,7 @@
                 android:layout_height="wrap_content"
 
                 android:gravity="left|center_vertical"
-                android:textSize="24dp"
+                android:textSize="14dp"
                 android:textColor="@color/black"
 
                 android:paddingLeft="5dp"
@@ -86,9 +75,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.8"
+        android:layout_weight="1.5"
         android:weightSum="5"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
         android:orientation="horizontal">
 
         <TextView
@@ -113,8 +102,8 @@
             android:textColor="@color/black"
             android:hint="1"
             android:background="@drawable/grey_transperantbtn"
-            android:textSize="24dp"
-            android:padding="10dp"
+            android:textSize="14dp"
+
             android:textStyle="bold"
             android:gravity="center"/>
         <ImageButton
@@ -139,12 +128,12 @@
 
 
     <LinearLayout
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1.5"
+        android:layout_height="wrap_content"
+
         android:weightSum="10"
         android:orientation="horizontal"
         >
@@ -159,7 +148,7 @@
             android:layout_height="match_parent"
             android:layout_weight="5"
             android:textColor="@android:color/black"
-            android:textSize="24dp"
+            android:textSize="14dp"
             android:text="Total Price"
             android:gravity="right|center_vertical"
             />
@@ -167,22 +156,23 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="4"
-            android:textSize="24dp"
+            android:textSize="14dp"
             android:textColor="@color/black"
             android:hint="1"
             android:gravity="center"
             android:paddingLeft="5dp"
             android:id="@+id/txt_cart_price"/>
 
+
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
         android:layout_marginTop="10dp"
-        android:layout_weight="1.5"
+
         android:orientation="horizontal"
         android:weightSum="10">
 
@@ -210,8 +200,8 @@
         android:layout_marginRight="5dp"
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1.5"
+        android:layout_height="wrap_content"
+
         android:weightSum="10"
         android:orientation="horizontal"
         >
@@ -224,7 +214,7 @@
         <TextView
             android:id="@+id/txt_cart_discount"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="9"
             android:gravity="right|center_vertical"
             android:text=""
@@ -233,13 +223,14 @@
 
 
     </LinearLayout>
+
     <LinearLayout
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
         android:layout_marginBottom="5dp"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_height="wrap_content"
+
         android:orientation="horizontal"
         android:weightSum="2"
         >
@@ -255,8 +246,8 @@
             android:layout_weight="0.5"
             android:background="@color/white"
             android:src="@drawable/wishlist_bluefill"
-            android:padding="10dp"
-            android:layout_margin="10dp"
+            android:padding="5dp"
+            android:layout_margin="5dp"
             android:layout_gravity="right|center_vertical"/>
 
         <ImageButton
@@ -266,8 +257,8 @@
             android:layout_weight="0.5"
             android:background="@color/white"
             android:src="@drawable/delete"
-            android:padding="10dp"
-            android:layout_margin="10dp"
+            android:padding="5dp"
+            android:layout_margin="5dp"
             android:layout_gravity="right|center_vertical"/>
 
     </LinearLayout>

@@ -1,6 +1,7 @@
 package skyward.pp;
 
 import android.Manifest;
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -8,12 +9,8 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.os.AsyncTask;
-import android.os.Handler;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
-import android.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.os.Handler;
 import android.telephony.TelephonyManager;
 import android.text.Editable;
 import android.text.InputFilter;
@@ -24,6 +21,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import org.ksoap2.SoapEnvelope;
 import org.ksoap2.serialization.SoapObject;
@@ -56,7 +57,7 @@ public class NumberVerificationActivity extends AppCompatActivity {
     public int mobiledigits =0;
     int mFlipping = 0 ;
     public static final int MY_PERMISSIONS_ALL=1;
-    public static final int MY_PERMISSIONS_READ_SMS=4;
+
     public static final int MY_PERMISSIONS_READ_EXTERNAL_STORAGE=2;
     public static final int MY_PERMISSIONS_WRITE_EXTERNAL_STORAGE=3;
     String countrycodepass="";
@@ -102,11 +103,9 @@ public class NumberVerificationActivity extends AppCompatActivity {
                 Manifest.permission.READ_EXTERNAL_STORAGE)
                 != PackageManager.PERMISSION_GRANTED  || ContextCompat.checkSelfPermission(NumberVerificationActivity.this,
                 Manifest.permission.WRITE_EXTERNAL_STORAGE)
-                != PackageManager.PERMISSION_GRANTED || ContextCompat.checkSelfPermission(NumberVerificationActivity.this,
-                Manifest.permission.READ_SMS)
                 != PackageManager.PERMISSION_GRANTED ) {
             ActivityCompat.requestPermissions(NumberVerificationActivity.this,
-                    new String[]{Manifest.permission.READ_EXTERNAL_STORAGE,Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.READ_SMS},
+                    new String[]{Manifest.permission.READ_EXTERNAL_STORAGE,Manifest.permission.WRITE_EXTERNAL_STORAGE},
                     MY_PERMISSIONS_ALL);
         }
        /* if (Build.VERSION.SDK_INT > Build.VERSION_CODES.LOLLIPOP_MR1)
@@ -165,11 +164,9 @@ public class NumberVerificationActivity extends AppCompatActivity {
                         Manifest.permission.READ_EXTERNAL_STORAGE)
                         != PackageManager.PERMISSION_GRANTED  || ContextCompat.checkSelfPermission(NumberVerificationActivity.this,
                         Manifest.permission.WRITE_EXTERNAL_STORAGE)
-                        != PackageManager.PERMISSION_GRANTED || ContextCompat.checkSelfPermission(NumberVerificationActivity.this,
-                        Manifest.permission.READ_SMS)
                         != PackageManager.PERMISSION_GRANTED ) {
                     ActivityCompat.requestPermissions(NumberVerificationActivity.this,
-                            new String[]{Manifest.permission.READ_EXTERNAL_STORAGE,Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.READ_SMS},
+                            new String[]{Manifest.permission.READ_EXTERNAL_STORAGE,Manifest.permission.WRITE_EXTERNAL_STORAGE},
                             MY_PERMISSIONS_ALL);
                 }else {
                     init();
@@ -252,11 +249,9 @@ public class NumberVerificationActivity extends AppCompatActivity {
                             Manifest.permission.READ_EXTERNAL_STORAGE)
                             != PackageManager.PERMISSION_GRANTED  || ContextCompat.checkSelfPermission(NumberVerificationActivity.this,
                             Manifest.permission.WRITE_EXTERNAL_STORAGE)
-                            != PackageManager.PERMISSION_GRANTED || ContextCompat.checkSelfPermission(NumberVerificationActivity.this,
-                            Manifest.permission.READ_SMS)
                             != PackageManager.PERMISSION_GRANTED ) {
                         ActivityCompat.requestPermissions(NumberVerificationActivity.this,
-                                new String[]{Manifest.permission.READ_EXTERNAL_STORAGE,Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.READ_SMS},
+                                new String[]{Manifest.permission.READ_EXTERNAL_STORAGE,Manifest.permission.WRITE_EXTERNAL_STORAGE},
                                 MY_PERMISSIONS_ALL);
                     }
                     // permission denied, boo! Disable the

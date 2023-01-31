@@ -2,6 +2,7 @@ package skyward.pp;
 
 import android.Manifest;
 import android.app.AlarmManager;
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.PendingIntent;
 import android.app.ProgressDialog;
@@ -12,15 +13,15 @@ import android.content.pm.PackageManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.SystemClock;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
-import android.app.AlertDialog;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
+
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import com.sinch.android.rtc.SinchError;
 
@@ -49,7 +50,6 @@ public class LaunchActivity extends BaseActivity implements SinchService.StartFa
     Button getBtnpop_submit;
     String navigatetext="";
     public static final int MY_PERMISSIONS_ALL=1;
-    public static final int MY_PERMISSIONS_READ_SMS=2;
     public static final int MY_PERMISSIONS_RECORD_AUDIO=3;
     public static final int MY_PERMISSIONS_MODIFY_AUDIO_SETTINGS=4;
     public static final int MY_PERMISSIONS_CAMERA=5;
@@ -123,51 +123,36 @@ public class LaunchActivity extends BaseActivity implements SinchService.StartFa
                 Manifest.permission.RECORD_AUDIO)
                 != PackageManager.PERMISSION_GRANTED || ContextCompat.checkSelfPermission(LaunchActivity.this,
                 Manifest.permission.CAMERA)
-                != PackageManager.PERMISSION_GRANTED ||ContextCompat.checkSelfPermission(LaunchActivity.this,
-                Manifest.permission.READ_SMS)
                 != PackageManager.PERMISSION_GRANTED || ContextCompat.checkSelfPermission(LaunchActivity.this,
                 Manifest.permission.MODIFY_AUDIO_SETTINGS)
                 != PackageManager.PERMISSION_GRANTED || ContextCompat.checkSelfPermission(LaunchActivity.this,
                 Manifest.permission.RECEIVE_BOOT_COMPLETED)
                 != PackageManager.PERMISSION_GRANTED ) {
             ActivityCompat.requestPermissions(LaunchActivity.this,
-                    new String[]{Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.RECORD_AUDIO, Manifest.permission.CAMERA, Manifest.permission.READ_SMS, Manifest.permission.MODIFY_AUDIO_SETTINGS,Manifest.permission.RECEIVE_BOOT_COMPLETED},
+                    new String[]{Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.RECORD_AUDIO, Manifest.permission.CAMERA, Manifest.permission.MODIFY_AUDIO_SETTINGS,Manifest.permission.RECEIVE_BOOT_COMPLETED},
                     MY_PERMISSIONS_ALL);
         }
 
-/*
-        if (!getSinchServiceInterface().isStarted()) {
-            System.out.println("/////////////////userregistered");
-            getSinchServiceInterface().startClient(Utility.getCallUser(getApplicationContext()));
-
-        }
-*/
 
 
         Intent alarm = new Intent(getApplicationContext(), OrderUpdateStatusReceiver.class);
-        boolean alarmRunning = (PendingIntent.getBroadcast(getApplicationContext(), 0, alarm, PendingIntent.FLAG_NO_CREATE) != null);
-        if(alarmRunning == false) {
-            PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), 0, alarm, 0);
+        PendingIntent pendingIntent = null;
+        boolean alarmRunning = (PendingIntent.getBroadcast(getApplicationContext(), 0, alarm, PendingIntent.FLAG_NO_CREATE | PendingIntent.FLAG_MUTABLE) != null);
+        if (alarmRunning == false) {
+            pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), 0, alarm, PendingIntent.FLAG_MUTABLE);
             AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-            alarmManager.setRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP, SystemClock.elapsedRealtime(),60000, pendingIntent);
+            alarmManager.setRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP, SystemClock.elapsedRealtime(), 60000, pendingIntent);
         }
 
+
         Intent alarm2 = new Intent(getApplicationContext(), SinchReceiver.class);
-        boolean alarmRunning2 = (PendingIntent.getBroadcast(getApplicationContext(), 0, alarm2, PendingIntent.FLAG_NO_CREATE) != null);
+        PendingIntent pendingIntent2 = null;
+        boolean alarmRunning2 = (PendingIntent.getBroadcast(getApplicationContext(), 0, alarm2, PendingIntent.FLAG_NO_CREATE | PendingIntent.FLAG_MUTABLE) != null);
         if (alarmRunning2 == false) {
-            PendingIntent pendingIntent2 = PendingIntent.getBroadcast(getApplicationContext(), 0, alarm2, 0);
+            pendingIntent2 = PendingIntent.getBroadcast(getApplicationContext(), 0, alarm2, PendingIntent.FLAG_MUTABLE);
             AlarmManager alarmManager2 = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
             alarmManager2.setRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP, SystemClock.elapsedRealtime(), 30000, pendingIntent2);
         }
-
-       /* String uname = Utility.getUserNamefordisplay(getApplicationContext())+"_"+Utility.getUserName(getApplicationContext());
-
-        if (!getSinchServiceInterface().isStarted()) {
-            System.out.println("/////////////////userregistered");
-            getSinchServiceInterface().startClient(uname);
-
-        }
-*/
 
 
         logout.setOnClickListener(new View.OnClickListener() {
@@ -228,8 +213,6 @@ public class LaunchActivity extends BaseActivity implements SinchService.StartFa
                 }
                 return;
             }
-
-
         }
         // other 'case' lines to check for other
         // permissions this app might request
@@ -245,12 +228,10 @@ public class LaunchActivity extends BaseActivity implements SinchService.StartFa
         }catch(Exception e){
             e.printStackTrace();
         }
-
     }
 
     @Override
     protected void onPause() {
-
         super.onPause();
     }
 
@@ -476,9 +457,10 @@ public class LaunchActivity extends BaseActivity implements SinchService.StartFa
 
 
                     Intent intent = new Intent(getApplicationContext(), OrderUpdateStatusReceiver.class);
-                    boolean alarmRunning = (PendingIntent.getBroadcast(getApplicationContext(), 0, intent, PendingIntent.FLAG_NO_CREATE) != null);
+                    PendingIntent pendingIntent = null;
+                    boolean alarmRunning = (PendingIntent.getBroadcast(getApplicationContext(), 0, intent, PendingIntent.FLAG_NO_CREATE | PendingIntent.FLAG_MUTABLE) != null);
                     if(alarmRunning == true) {
-                        PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), 0, intent, PendingIntent.FLAG_NO_CREATE);
+                        pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), 0, intent, PendingIntent.FLAG_MUTABLE);
                         AlarmManager alarmManager = (AlarmManager) getApplicationContext().getSystemService(getApplicationContext().ALARM_SERVICE);
                         alarmManager.cancel(pendingIntent);
                     }

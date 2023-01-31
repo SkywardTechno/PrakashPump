@@ -405,10 +405,19 @@ public class NavigationHeader extends BaseActivity{
                     Utility.saveUserType(NavigationHeader.this, "");
                     Utility.saveUserName(NavigationHeader.this, "");
 
-                    Intent intent = new Intent(getApplicationContext(), OrderUpdateStatusReceiver.class);
+                    /*Intent intent = new Intent(getApplicationContext(), OrderUpdateStatusReceiver.class);
                     boolean alarmRunning = (PendingIntent.getBroadcast(getApplicationContext(), 0, intent, PendingIntent.FLAG_NO_CREATE) != null);
                     if(alarmRunning == true) {
                         PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), 0, intent, PendingIntent.FLAG_NO_CREATE);
+                        AlarmManager alarmManager = (AlarmManager) getApplicationContext().getSystemService(getApplicationContext().ALARM_SERVICE);
+                        alarmManager.cancel(pendingIntent);
+                    }*/
+
+                    Intent intent = new Intent(getApplicationContext(), OrderUpdateStatusReceiver.class);
+                    PendingIntent pendingIntent = null;
+                    boolean alarmRunning = (PendingIntent.getBroadcast(getApplicationContext(), 0, intent, PendingIntent.FLAG_NO_CREATE | PendingIntent.FLAG_MUTABLE) != null);
+                    if(alarmRunning == true) {
+                        pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), 0, intent, PendingIntent.FLAG_MUTABLE);
                         AlarmManager alarmManager = (AlarmManager) getApplicationContext().getSystemService(getApplicationContext().ALARM_SERVICE);
                         alarmManager.cancel(pendingIntent);
                     }

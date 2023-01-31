@@ -1,6 +1,7 @@
 package skyward.pp;
 
 import android.app.AlarmManager;
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.PendingIntent;
 import android.app.ProgressDialog;
@@ -11,11 +12,9 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteException;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Bundle;
 import android.os.Handler;
 import android.os.SystemClock;
-import android.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -165,11 +164,11 @@ public class VerificationcodeActivity extends BaseActivity implements SinchServi
             }
         });
 
-        t.start();
+     //   t.start();
     }
 
 
-        Thread t = new Thread() {
+        /*Thread t = new Thread() {
             @Override
             public void run() {
                 try {
@@ -197,7 +196,7 @@ public class VerificationcodeActivity extends BaseActivity implements SinchServi
         public void run() {
             getCode();
         }
-    };
+    };*/
 
 
     public void getCode() {
@@ -239,7 +238,7 @@ public class VerificationcodeActivity extends BaseActivity implements SinchServi
                             matcher.find();
                             Log.e("No....--", matcher.group());
                             if (matcher.group().equals("")) {
-                                handler.postDelayed(run, 7000);
+                              //  handler.postDelayed(run, 7000);
                             } else {
                                 verificationcode.setText(matcher.group());
                             }
@@ -397,9 +396,10 @@ public class VerificationcodeActivity extends BaseActivity implements SinchServi
 
                             }
                             Intent alarm = new Intent(getApplicationContext(), OrderUpdateStatusReceiver.class);
-                            boolean alarmRunning = (PendingIntent.getBroadcast(getApplicationContext(), 0, alarm, PendingIntent.FLAG_NO_CREATE) != null);
+                            PendingIntent pendingIntent = null;
+                            boolean alarmRunning = (PendingIntent.getBroadcast(getApplicationContext(), 0, alarm, PendingIntent.FLAG_NO_CREATE | PendingIntent.FLAG_MUTABLE) != null);
                             if (alarmRunning == false) {
-                                PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), 0, alarm, 0);
+                                pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), 0, alarm, PendingIntent.FLAG_MUTABLE);
                                 AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
                                 alarmManager.setRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP, SystemClock.elapsedRealtime(), 60000, pendingIntent);
                             }
@@ -418,13 +418,8 @@ public class VerificationcodeActivity extends BaseActivity implements SinchServi
                         }
                     }
 
-                } catch (NullPointerException e) {
-
-                    e.printStackTrace();
-                } catch (ArrayIndexOutOfBoundsException e) {
-
-                    e.printStackTrace();
                 } catch (Exception e) {
+
                     e.printStackTrace();
                 }
             }else{

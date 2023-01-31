@@ -9,7 +9,6 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.SystemClock;
-import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -488,9 +487,10 @@ public class LoginActivity extends BaseActivity implements SinchService.StartFai
 
                                 }
                                 Intent alarm = new Intent(getApplicationContext(), OrderUpdateStatusReceiver.class);
-                                boolean alarmRunning = (PendingIntent.getBroadcast(getApplicationContext(), 0, alarm, PendingIntent.FLAG_NO_CREATE) != null);
+                                PendingIntent pendingIntent = null;
+                                boolean alarmRunning = (PendingIntent.getBroadcast(getApplicationContext(), 0, alarm, PendingIntent.FLAG_NO_CREATE | PendingIntent.FLAG_MUTABLE) != null);
                                 if (alarmRunning == false) {
-                                    PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), 0, alarm, 0);
+                                    pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), 0, alarm, PendingIntent.FLAG_MUTABLE);
                                     AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
                                     alarmManager.setRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP, SystemClock.elapsedRealtime(), 60000, pendingIntent);
                                 }
@@ -503,9 +503,10 @@ public class LoginActivity extends BaseActivity implements SinchService.StartFai
                             }
 
                             Intent alarm2 = new Intent(getApplicationContext(), SinchReceiver.class);
-                            boolean alarmRunning2 = (PendingIntent.getBroadcast(getApplicationContext(), 0, alarm2, PendingIntent.FLAG_NO_CREATE) != null);
+                            PendingIntent pendingIntent2 = null;
+                            boolean alarmRunning2 = (PendingIntent.getBroadcast(getApplicationContext(), 0, alarm2, PendingIntent.FLAG_NO_CREATE | PendingIntent.FLAG_MUTABLE) != null);
                             if (alarmRunning2 == false) {
-                                PendingIntent pendingIntent2 = PendingIntent.getBroadcast(getApplicationContext(), 0, alarm2, 0);
+                                pendingIntent2 = PendingIntent.getBroadcast(getApplicationContext(), 0, alarm2, PendingIntent.FLAG_MUTABLE);
                                 AlarmManager alarmManager2 = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
                                 alarmManager2.setRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP, SystemClock.elapsedRealtime(), 30000, pendingIntent2);
                             }

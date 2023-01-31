@@ -1,6 +1,7 @@
 package skyward.pp;
 
 import android.app.AlarmManager;
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.PendingIntent;
 import android.app.ProgressDialog;
@@ -12,11 +13,6 @@ import android.graphics.Rect;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
-
-import androidx.core.view.MenuItemCompat;
-import android.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -27,6 +23,9 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.MenuItemCompat;
 
 import org.ksoap2.SoapEnvelope;
 import org.ksoap2.serialization.SoapObject;
@@ -53,8 +52,6 @@ public class DashboardActivity extends BaseActivity {
     Dialog dialog;
     int notificationtotalcount=0;
     private TextView ui_hot1 = null;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -207,10 +204,6 @@ public class DashboardActivity extends BaseActivity {
                 }
             }
         });
-
-
-
-
     }
 
     class getNotification extends AsyncTask<Void, Void, SoapObject> {
@@ -622,11 +615,12 @@ public class DashboardActivity extends BaseActivity {
                         getSinchServiceInterface().stopClient();
                     }
 
-                    Intent intent = new Intent(DashboardActivity.this, OrderUpdateStatusReceiver.class);
-                    boolean alarmRunning = (PendingIntent.getBroadcast(DashboardActivity.this, 0, intent, PendingIntent.FLAG_NO_CREATE) != null);
+                    Intent intent = new Intent(getApplicationContext(), OrderUpdateStatusReceiver.class);
+                    PendingIntent pendingIntent = null;
+                    boolean alarmRunning = (PendingIntent.getBroadcast(getApplicationContext(), 0, intent, PendingIntent.FLAG_NO_CREATE | PendingIntent.FLAG_MUTABLE) != null);
                     if(alarmRunning == true) {
-                        PendingIntent pendingIntent = PendingIntent.getBroadcast(DashboardActivity.this, 0, intent, PendingIntent.FLAG_NO_CREATE);
-                        AlarmManager alarmManager = (AlarmManager) DashboardActivity.this.getSystemService(DashboardActivity.this.ALARM_SERVICE);
+                        pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), 0, intent, PendingIntent.FLAG_MUTABLE);
+                        AlarmManager alarmManager = (AlarmManager) getApplicationContext().getSystemService(getApplicationContext().ALARM_SERVICE);
                         alarmManager.cancel(pendingIntent);
                     }
 

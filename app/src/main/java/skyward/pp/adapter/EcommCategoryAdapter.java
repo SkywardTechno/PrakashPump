@@ -60,7 +60,6 @@ public class EcommCategoryAdapter extends BaseAdapter {
             item = new EcommCategoryHolder(txt_categoryname);
             convertView.setTag(item);
 
-
         }
         else
         {

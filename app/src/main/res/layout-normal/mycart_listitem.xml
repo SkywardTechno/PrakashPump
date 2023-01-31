@@ -5,19 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/layerlist"
-    android:weightSum="5">
-
-
+    android:weightSum="2">
 
     <LinearLayout
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        android:layout_marginTop="5dp"
+        android:padding="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:weightSum="10"
-        android:orientation="horizontal"
-        >
+        android:orientation="horizontal">
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -25,7 +20,6 @@
 
         <ImageView
             android:scaleType="fitCenter"
-
             android:id="@+id/offer_image_view"
             android:layout_width="0dp"
             android:layout_height="60dp"
@@ -53,12 +47,7 @@
                 android:gravity="center_vertical"
                 android:layout_gravity="center_vertical"
                 android:paddingLeft="5dp"/>
-            <!--
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="0dp"
-                            android:layout_weight="0.1"/>
-            -->
+
             <TextView
                 android:layout_marginBottom="5dp"
                 android:layout_marginTop="5dp"
@@ -86,7 +75,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.8"
+        android:layout_weight="1.5"
         android:weightSum="5"
         android:layout_marginTop="5dp"
         android:orientation="horizontal">
@@ -114,7 +103,7 @@
             android:hint="1"
             android:background="@drawable/grey_transperantbtn"
             android:textSize="14dp"
-            android:padding="10dp"
+
             android:textStyle="bold"
             android:gravity="center"/>
         <ImageButton
@@ -143,8 +132,8 @@
         android:layout_marginRight="5dp"
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1.5"
+        android:layout_height="wrap_content"
+
         android:weightSum="10"
         android:orientation="horizontal"
         >
@@ -179,11 +168,11 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
         android:layout_marginTop="10dp"
-        android:layout_weight="1.5"
+
         android:orientation="horizontal"
         android:weightSum="10">
 
@@ -211,8 +200,8 @@
         android:layout_marginRight="5dp"
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1.5"
+        android:layout_height="wrap_content"
+
         android:weightSum="10"
         android:orientation="horizontal"
         >
@@ -225,7 +214,7 @@
         <TextView
             android:id="@+id/txt_cart_discount"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="9"
             android:gravity="right|center_vertical"
             android:text=""
@@ -240,8 +229,8 @@
         android:layout_marginRight="5dp"
         android:layout_marginBottom="5dp"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_height="wrap_content"
+
         android:orientation="horizontal"
         android:weightSum="2"
         >

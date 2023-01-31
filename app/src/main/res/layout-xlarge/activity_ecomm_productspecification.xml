@@ -27,20 +27,18 @@
         android:textColorHint="@color/black"
         android:textStyle="bold"
         android:textColor="@color/black"
-        android:textSize="26dp"/>
+        android:textSize="20dp"/>
 
     <TextView
         android:id="@+id/txt_spec_modelno"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.8"
-
+        android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:paddingLeft="10dp"
         android:background="@color/light_grey"
         android:textColorHint="@color/black"
         android:textColor="@color/black"
-        android:textSize="24dp"/>
+        android:textSize="14dp"/>
 
     <!--
         <ImageView
@@ -72,7 +70,7 @@
         android:textStyle="bold"
         android:gravity="right|center_vertical"
         android:textColor="@color/skyblue"
-        android:textSize="24dp"/>
+        android:textSize="20dp"/>
 
     <TextView
         android:layout_width="match_parent"
@@ -80,7 +78,7 @@
         android:layout_weight="0.1"/>
 
     <ScrollView
-        android:layout_below="@+id/toolbar"
+
         android:layout_width="fill_parent"
         android:fillViewport="true"
         android:layout_height="0dp"
@@ -125,7 +123,7 @@
                         android:text="About this Product"
                         android:textColor="@color/black"
                         android:textStyle="bold"
-                        android:textSize="24dp"/>
+                        android:textSize="18dp"/>
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
@@ -141,11 +139,11 @@
                         <TextView
                             android:id="@+id/txt_headapp"
                             android:layout_width="match_parent"
-                            android:layout_height="0dp"
+                            android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="Applications :"
                             android:textColor="@color/Blue"
-                            android:textSize="24dp"
+                            android:textSize="18dp"
                             android:padding="10dp"/>
                         <ImageView
                             android:id="@+id/lineapplication"
@@ -162,20 +160,20 @@
                             android:layout_height="wrap_content"
                             android:hint="Application description here :"
                             android:textColor="@color/black"
-                            android:textSize="24dp"
-                            android:padding="10dp"
+                            android:textSize="14dp"
+                            android:layout_margin="10dp"
 
                             />
 
                         <TextView
                             android:id="@+id/txt_headspec"
                             android:layout_width="match_parent"
-                            android:layout_height="0dp"
+                            android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="Specifications :"
                             android:textColor="@color/Blue"
-                            android:textSize="24dp"
-                            android:padding="10dp"/>
+                            android:textSize="18dp"
+                            android:layout_margin="10dp"/>
                         <ImageView
                             android:id="@+id/linespecification"
                             android:layout_width="match_parent"
@@ -192,7 +190,7 @@
                             android:layout_height="wrap_content"
                             android:hint="Specification description here :"
                             android:textColor="@color/black"
-                            android:textSize="24dp"
+                            android:textSize="14dp"
                             android:padding="10dp"
 
                             />
@@ -200,12 +198,12 @@
                         <TextView
                             android:id="@+id/txt_headff"
                             android:layout_width="match_parent"
-                            android:layout_height="0dp"
+                            android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="Functions and Features :"
                             android:textColor="@color/Blue"
-                            android:textSize="24dp"
-                            android:padding="10dp"/>
+                            android:textSize="18dp"
+                            android:layout_margin="10dp"/>
                         <ImageView
                             android:id="@+id/lineff"
                             android:layout_width="match_parent"
@@ -222,8 +220,8 @@
                             android:layout_height="wrap_content"
                             android:hint="Description here :"
                             android:textColor="@color/black"
-                            android:textSize="24dp"
-                            android:padding="10dp"
+                            android:textSize="14dp"
+                            android:layout_margin="10dp"
 
                             />
 
@@ -235,18 +233,18 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"
+                        android:layout_height="wrap_content"
                         android:layout_weight="3"
                         android:weightSum="5"
                         android:orientation="vertical">
 
                         <TextView
                             android:layout_width="match_parent"
-                            android:layout_height="0dp"
-                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+
                             android:text="Quantity :"
                             android:textColor="@color/Blue"
-                            android:textSize="24dp"
+                            android:textSize="18dp"
                             android:padding="10dp"/>
                         <ImageView
                             android:layout_width="match_parent"
@@ -264,8 +262,8 @@
 
                         <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="0dp"
-                            android:layout_weight="0.8"
+                            android:layout_height="wrap_content"
+
                             android:weightSum="5"
                             android:paddingLeft="10dp"
                             android:orientation="horizontal">
@@ -273,7 +271,7 @@
                             <ImageButton
                                 android:id="@+id/imgbtn_spec_quantity_add"
                                 android:layout_width="0dp"
-                                android:layout_height="match_parent"
+                                android:layout_height="40dp"
                                 android:layout_weight="1"
                                 android:src="@drawable/add"
                                 android:background="@drawable/grey_transperantbtn"
@@ -288,14 +286,14 @@
                                 android:textColor="@color/black"
                                 android:hint="1"
                                 android:background="@drawable/grey_transperantbtn"
-                                android:textSize="24dp"
+                                android:textSize="18dp"
                                 android:padding="10dp"
                                 android:textStyle="bold"
                                 android:gravity="center"/>
                             <ImageButton
                                 android:id="@+id/imgbtn_spec_quantity_subtract"
                                 android:layout_width="0dp"
-                                android:layout_height="match_parent"
+                                android:layout_height="40dp"
                                 android:layout_weight="1"
                                 android:src="@drawable/minus"
                                 android:background="@drawable/grey_transperantbtn"
@@ -304,6 +302,17 @@
 
 
                         </LinearLayout>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/txt_large"
+                            android:textColor="@color/darkgreen"
+                            android:text=""
+                            android:padding="2dp"
+                            android:layout_margin="10dp"
+                            android:gravity="center_vertical"
+                            />
 
                     </LinearLayout>
                     <TextView
@@ -326,6 +335,18 @@
                         android:gravity="center_vertical"
                         />
 
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/txt_large"
+                        android:textColor="@color/darkgreen"
+                        android:text=""
+                        android:padding="2dp"
+                        android:id="@+id/discounttext"
+
+                        android:layout_margin="10dp"
+                        android:gravity="center_vertical"
+                        />
 
                 </LinearLayout>
 
@@ -369,7 +390,7 @@
 
                 android:text="Add to Wishlist"
                 android:textColor="@color/black"
-                android:textSize="14dp"
+                android:textSize="10dp"
                 android:gravity="center"/>
         </LinearLayout>
 
@@ -395,7 +416,32 @@
                 android:layout_weight="1.5"
                 android:text="Add to Cart"
                 android:textColor="@color/black"
-                android:textSize="14dp"
+                android:textSize="10dp"
+                android:gravity="center"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_add_nearby"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:weightSum="5"
+            android:background="@drawable/grey_transperantbtn"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="3.5"
+                android:layout_gravity="center"
+                android:padding="5dp"
+                android:src="@drawable/location_darkblue"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1.5"
+                android:text="Nearby Dealers"
+                android:textColor="@color/black"
+                android:textSize="10dp"
                 android:gravity="center"/>
         </LinearLayout>
 
@@ -403,10 +449,10 @@
             android:id="@+id/btn_spec_buyproduct"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="3"
+            android:layout_weight="2"
             android:text="Buy Now"
             android:textColor="@color/white"
-            android:textSize="24dp"
+            android:textSize="18dp"
             android:background="@drawable/blue_squarebtn_bg"
             android:textAllCaps="false"/>
 

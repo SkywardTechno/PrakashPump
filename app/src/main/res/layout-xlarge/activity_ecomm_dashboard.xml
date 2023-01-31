@@ -135,7 +135,7 @@
                     android:textColor="@color/dashtextgrey"
                     android:textSize="24dp"/>
 
-                <android.support.v7.widget.RecyclerView
+                <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recycler_view_category1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -167,7 +167,7 @@
                     android:textColor="@color/dashtextgrey"
                     android:textSize="24dp"/>
 
-                <android.support.v7.widget.RecyclerView
+                <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recycler_view_category2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -198,7 +198,7 @@
                     android:textColor="@color/dashtextgrey"
                     android:textSize="24dp"/>
 
-                <android.support.v7.widget.RecyclerView
+                <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recycler_view_category3"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -229,7 +229,7 @@
                     android:textColor="@color/dashtextgrey"
                     android:textSize="24dp"/>
 
-                <android.support.v7.widget.RecyclerView
+                <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recycler_view_category4"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -260,7 +260,7 @@
                     android:textColor="@color/dashtextgrey"
                     android:textSize="24dp"/>
 
-                <android.support.v7.widget.RecyclerView
+                <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recycler_view_category5"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -291,7 +291,7 @@
                     android:textColor="@color/dashtextgrey"
                     android:textSize="24dp"/>
 
-                <android.support.v7.widget.RecyclerView
+                <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recycler_view_category6"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -322,7 +322,7 @@
                     android:textColor="@color/dashtextgrey"
                     android:textSize="24dp"/>
 
-                <android.support.v7.widget.RecyclerView
+                <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recycler_view_category7"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
